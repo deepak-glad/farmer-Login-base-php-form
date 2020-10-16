@@ -8,6 +8,8 @@ if(isset($_POST["update"])){
 	$aadhar=$_POST['aadhar'];
 	$village=$_POST['village'];
 	$taluka=$_POST['taluka'];
+	$country=$_POST['country'];
+	$state=$_POST['state'];
 	$city=$_POST['city'];
 	$phone=$_POST['phone'];
 	$mobile=$_POST['mobile'];
@@ -22,7 +24,7 @@ if(isset($_POST["update"])){
 		$msg="<script>alert('Please enter a valid number'>;</script>";
 	else :
 		// insert data
-		$sql="UPDATE data SET surname='".$surname."',name='".$name."',fhname='".$fhname."',aadhar='".$aadhar."',village='".$village."',taluka='".$taluka."',
+		$sql="UPDATE data SET surname='".$surname."',name='".$name."',fhname='".$fhname."',aadhar='".$aadhar."',village='".$village."',taluka='".$taluka."',country='".$country."',state='".$state."',
         city='".$city."',phone='".$phone."',mobile='".$mobile."',telegram='".$telegram."'  WHERE email='$email'";
 		if ($conn->query($sql) === TRUE) {
 			echo "update successfully";
