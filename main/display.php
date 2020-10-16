@@ -14,10 +14,7 @@ if($total != 0){
 	
 	<?php
     while($result= mysqli_fetch_assoc($data)){
-        $res = mysqli_query($conn,"SELECT * FROM countries WHERE id=$result[country]");
-        $resu = mysqli_query($conn,"SELECT * FROM states where id = $result[state]");
-        while($row = mysqli_fetch_array($res) and $roww=mysqli_fetch_array($resu)){
-
+        
         echo "<tr><td>SURNAME:-</td><td></td>
         <td><input disabled name='surname' id='surname' value=".$result['surname']."></td></tr>
         <tr><td>NAME:-</td><td></td>
@@ -29,12 +26,24 @@ if($total != 0){
         <tr><td>VILLAGE:-</td><td></td>
         <td><input disabled name='village' id='village' value=".$result['village']."></td></tr>
         <tr><td>TALUKA:-</td> <td></td>
-        <td><input disabled name='taluka' id='taluka' value=".$result['taluka']."></td></tr>
-        <tr><td>COUNTRY:-</td><td></td>
+        <td><input disabled name='taluka' id='taluka' value=".$result['taluka']."></td></tr>";
+	
+	
+	$res = mysqli_query($conn,"SELECT * FROM countries WHERE id=$result[country]");
+        $resu = mysqli_query($conn,"SELECT * FROM states where id = $result[state]");
+        if($row = mysqli_fetch_array($res) and $roww=mysqli_fetch_array($resu)){
+		echo "<tr><td>COUNTRY:-</td><td></td>
         <td><input disabled name='country' id='country' value=".$row['name']."></td></tr>
         <tr><td>STATE:-</td><td></td>
-        <td><input disabled name='state' id='state' value=".$roww['name']."></td></tr>
-        <tr><td>CITY:-</td><td></td>
+        <td><input disabled name='state' id='state' value=".$roww['name']."></td></tr>";
+	}else{
+		echo "<tr><td>COUNTRY:-</td><td></td>
+        <td><input disabled name='country' id='country' value=".$result['country']."></td></tr>
+        <tr><td>STATE:-</td><td></td>
+        <td><input disabled name='state' id='state' value=".$result['state']."></td></tr>";
+	     }
+	    
+	     echo " <tr><td>CITY:-</td><td></td>
         <td><input disabled name='city' id='city' value= ".$result['city']."></td></tr>
         <tr><td>PHONE:-</td><td></td>
         <td> <input disabled name='phone' id='phone' value=".$result['phone']."></td></tr>
