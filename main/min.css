@@ -1,0 +1,47 @@
+a{
+    padding:10px;
+    background-color: gainsboro;
+    margin: 5px;
+    border-radius: 8px;
+    color: blue;
+    text-decoration: none;
+}
+a:hover{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}
+body{
+    width: 100%;
+    margin: 40px auto;
+    width: 100%;
+    padding: 5px;
+    background-image:linear-gradient(white,rgb(221, 221, 221)) ;
+}
+input{
+    width: 400px;
+    border: 1px solid rgb(216, 212, 212);
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 4px;
+    margin-top:15px;
+}
+.conatinerdes{
+    box-shadow: 1px 4px 5px black;
+   width: 500px;
+}
+.btn_shift{
+    float: right;
+    margin: 20px;
+    background-color: blue;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+.btn_shift:hover{
+  background-color: white;
+  box-shadow: 0 0 4px black;
+  color: blue;
+}
